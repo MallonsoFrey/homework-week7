@@ -1,0 +1,88 @@
+body {
+    background-color: rgb(152, 227, 227); /*задаётся цвет фона, жирность и размер шрифта во всём документе*/
+    font-weight: 700;
+    font-size: 1em;
+}
+
+.flex-container { /*контейнер. содержит главную часть*/
+    display: flex; /*"отображение элементов" - флекс*/
+    flex-direction: row; /*флекс-элементы идут в ряд*/
+    justify-content: center; /*флекс-элементы становятся в середину главной оси - по горизонтали*/
+    height: 65vh; /*флекс-элемент занимает 30% высоты видимой области окна браузера*/
+    width: 100%;
+}
+
+h2 { /*все заголовки h2 становятся в центр своего родительского элемента*/
+    text-align: center;
+}
+
+.left-part { /*левая часть главного контейнера, занимает 60% от его размера*/
+    flex: 1;
+    background-color: beige;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right-part { /*правая часть главного контейнера, занимает 40% от его размера*/
+    flex: 0 0 40%;
+    background-color: aquamarine;
+}
+
+.somecontainer { /*контейнер для 2 рядов блоков в левой части*/
+    display: flex; /*"отображение элементов" - флекс*/
+    justify-content: center; /*флекс-элементы становятся в середину главной оси - по горизонтали*/
+    flex-direction: column; /*2 ряда блоков идут в стобце*/
+    margin-bottom: 2em;
+    height: 60%; /*контейнер занимает 60% контейнера left-part*/
+    width: 100%;
+}
+
+.top { /*1 ряд блока. содержит 2 равных блочка*/
+    display: flex; /*"отображение элементов" - флекс*/
+    flex-direction: row; /*флекс-элементы идут в ряд*/
+    justify-content: center; /*флекс-элементы становятся в середину главной оси - по горизонтали*/
+    flex-grow: 1; /*флекс-элементы растут и занимают всё свободное им пространство*/
+}
+
+.boxie, .bottomboxie { /*применяется к блочкам верхнего и нижнего ряда блока somecontainer*/
+    display: flex; /*"отображение элементов" - флекс*/
+    justify-content: center; /*флекс-элементы становятся в середину главной оси - по горизонтали*/
+    align-items: center; /*флекс-элементы становятся в середину поперечной оси - по вертикали*/
+    flex-grow: 1; /*флекс-элементы растут и занимают всё свободное им пространство*/
+    background-color: rgb(235, 189, 127);
+    margin: 0.5em 1em; /*отступы по 5 пикселей сверху/снизу и по 10 по бокам*/
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    background-color: thistle;
+    max-width: 100%;
+    height: 15vh;
+    margin: 0;
+    padding: 1em 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 1em;
+}
+
+li {
+    margin: 1em;
+    background-color: beige;
+    text-align: center;
+    padding: 0.5em; /* Adjust padding for content */
+    max-height: 100%;
+}
+
+
+@media screen and (max-width: 439px) {
+    ul {
+        grid-template-columns: repeat(2, 1fr); /* Two columns per row */
+        height: 30vh;
+    }
+}
